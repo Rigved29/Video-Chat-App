@@ -8,6 +8,7 @@ const VideoPlayer = () => {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } =
     useContext(SocketContext);
 
+  console.log(call, "call in video comp");
   return (
     <div>
       <h1>VideoPlayer</h1>

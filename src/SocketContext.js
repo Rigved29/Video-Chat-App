@@ -53,6 +53,8 @@ const ContextProvider = ({ children }) => {
     peer.signal(call.signal);
 
     connectionRef.current = peer;
+
+    console.log(call, "call inside answerCallfxn");
   };
 
   const callUser = (id) => {
