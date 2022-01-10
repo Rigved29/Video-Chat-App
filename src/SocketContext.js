@@ -65,7 +65,7 @@ const ContextProvider = ({ children }) => {
         userToCall: id,
         signalData: data,
         from: me,
-        name,
+        name:name,
       });
     });
     peer.on("stream", (currentStream) => {
