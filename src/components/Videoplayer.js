@@ -38,8 +38,8 @@ const VideoPlayer = () => {
           <div className="border-4 rounded border-white row-span-1 col-start-2 col-end-12 md:col-span-5 md:col-start-7 md:col-end-11 bg-white my-5">
             <div className="w-full">
               <p className="text-lg text-center py-1 font-semibold">
-                {/* {call.name || "Name"} */}
-                Someone
+                {call.name || "Name"}
+                {/* Someone */}
               </p>
               <video
                 playsInline

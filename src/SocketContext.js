@@ -4,7 +4,9 @@ import Peer from "simple-peer";
 
 const SocketContext = createContext();
 
-const socket = io("https://videochatwebapp-rs.herokuapp.com/");
+// const socket = io("https://videochatwebapp-rs.herokuapp.com/");
+const socket = io("https://videochatapp-ywhi.onrender.com/");
+
 
 const ContextProvider = ({ children }) => {
   const [stream, setStream] = useState(null);
@@ -33,7 +35,7 @@ const ContextProvider = ({ children }) => {
     socket.on("calluser", ({ from, name: callerName, signal }) => {
       setCall({ isReceivedCall: true, from, name: callerName, signal });
     });
-  }, []);
+  }, [call]);
 
   console.log(call);
 
@@ -42,8 +44,11 @@ const ContextProvider = ({ children }) => {
 
     const peer = new Peer({ initiator: false, trickle: false, stream });
 
+    console.log(call, "call inside answerCallfxn");
+
     peer.on("signal", (data) => {
       socket.emit("answercall", { signal: data, to: call.from });
+      console.log(data);
     });
 
     peer.on("stream", (currentStream) => {
@@ -65,17 +70,26 @@ const ContextProvider = ({ children }) => {
         userToCall: id,
         signalData: data,
         from: me,
-        name,
+        name: name,
+      });
+      console.log({
+        userToCall: id,
+        signalData: data,
+        from: me,
+        name: name,
       });
     });
     peer.on("stream", (currentStream) => {
       userVideo.current.srcObject = currentStream;
     });
 
+    console.log(id);
+
     socket.on("callaccepted", (signal) => {
       setCallAccepted(true);
 
       peer.signal(signal);
+      console.log(signal);
     });
 
     connectionRef.current = peer;
