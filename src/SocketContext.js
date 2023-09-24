@@ -77,6 +77,7 @@ const ContextProvider = ({ children }) => {
         signalData: data,
         from: me,
         name: name,
+        name: name,
       });
     });
     peer.on("stream", (currentStream) => {
