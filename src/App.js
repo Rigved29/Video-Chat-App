@@ -5,7 +5,7 @@ import Options from "./components/Options";
 import Notifications from "./components/Notifications";
 
 const App = () => {
-  // const [image, setImage] = useState("");
+  const [image, setImage] = useState("");
 
   // useEffect(() => {
   //   const getBg = async () => {
