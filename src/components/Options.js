@@ -37,7 +37,7 @@ const Options = (props) => {
           />
           {callAccepted && !callEnded ? (
             <button
-              className="bg-red-500 text-white  my-3 rounded py-1 px-2"
+              className="bg-red-500 text-white my-3 rounded py-1 px-2"
               onClick={leaveCall}
             >
               Hang Up
