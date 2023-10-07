@@ -26,7 +26,7 @@ const VideoPlayer = () => {
                 ref={myVideo}
                 autoPlay
                 className=""
-                controls
+              // controls
               />
             </div>
           </div>
@@ -44,7 +44,7 @@ const VideoPlayer = () => {
                 ref={userVideo}
                 autoPlay
                 className=""
-                controls
+              // controls
               />
             </div>
           </div>
