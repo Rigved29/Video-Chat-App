@@ -1,53 +1,28 @@
-import React, { useContext, useRef } from "react";
+import React, { useEffect, useContext, useRef } from "react";
 import { SocketContext } from "../SocketContext";
+import MyPlayer from "./videoComps/MyVideo";
+import YourPlayer from "./videoComps/Yourvideo";
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ videoOn, audioOn, setVideoCompRendered }) => {
   // const myVideo = useRef();
   // const userVideo = useRef();
 
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
 
-  console.log(name, callAccepted, myVideo, userVideo, callEnded, stream, call, "in video comp");
+
+
+
   return (
     <div>
-
-      <div className="grid md:grid-cols-12 grid-rows-2 md:grid-rows-1 grid-cols-12 mx-auto">
+      <div className="grid md:grid-cols-12 grid-cols-12 mx-auto pt-2">
         {" "}
         {/*our video*/}
-        {stream && (
-          <div className=" border-4 border-white rounded row-span-1 col-start-2 col-end-12 md:col-start-2 md:col-end-6 bg-white my-5">
-            <div className="w-full">
-              <p className="text-lg text-center py-1 font-semibold">
-                {name || "Your Name"}
-              </p>
-              <video
-                playsInline
-                muted
-                ref={myVideo}
-                autoPlay
-                className=""
-              // controls
-              />
-            </div>
-          </div>
+        {callAccepted && !callEnded && (
+          <YourPlayer />
         )}
         {/*remote peer's video*/}
-        {callAccepted && !callEnded && (
-          <div className="border-4 rounded border-white row-span-1 col-start-2 col-end-12 md:col-span-5 md:col-start-7 md:col-end-11 bg-white my-5">
-            <div className="w-full">
-              <p className="text-lg text-center py-1 font-semibold">
-                {call?.name || "Name"}
-                {/* Someone */}
-              </p>
-              <video
-                playsInline
-                ref={userVideo}
-                autoPlay
-                className=""
-              // controls
-              />
-            </div>
-          </div>
+        {stream && (
+          <MyPlayer audioOn={audioOn} setVideoCompRendered={setVideoCompRendered} />
         )}
       </div>
     </div>

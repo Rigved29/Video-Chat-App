@@ -1,0 +1,15 @@
+.btn {
+    padding-inline: 5px;
+    font-size: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.endCall {
+    background-color: red;
+    color: white;
+    padding-inline: 5px;
+    font-size: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}

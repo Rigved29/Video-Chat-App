@@ -1,0 +1,15 @@
+.callModalDiv {
+    position: absolute;
+    left: 32%;
+    /* bottom: -100px; */
+    transition: translate 0.5s ease-in-out;
+    background-color: #201b2a;
+}
+
+.callModalDivClose {
+    translate: 0px 0px;
+}
+
+.callModalDivOpen {
+    translate: 0px -170%;
+}

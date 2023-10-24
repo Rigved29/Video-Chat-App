@@ -1,10 +1,8 @@
 .App {
   text-align: center;
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(255, 209, 67, 1) 0%,
-    rgba(255, 145, 83, 1) 90%
-  );
+  background-image: radial-gradient(circle farthest-corner at 10% 20%,
+      rgba(255, 209, 67, 1) 0%,
+      rgba(255, 145, 83, 1) 90%);
   z-index: 10;
 }
 
@@ -38,7 +36,14 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.parentDiv {
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #201b2a;
 }
