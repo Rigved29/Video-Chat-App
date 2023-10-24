@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { SocketContext } from "../SocketContext";
-import { IoCopy } from 'react-icons/io5';
 import { AiOutlineClose } from 'react-icons/ai'
 import './callModal.css';
 
@@ -9,6 +8,8 @@ const CallModal = (props) => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } =
     useContext(SocketContext);
   const [idToCall, setIdToCall] = useState("");
+
+  console.log('wokring')
 
   return (
     <div className={`z-5 w-1/3 text-white rounded-3xl  mx-auto border-white bg-white my-10 callModalDiv ${props.openModal ? 'callModalDivOpen' : 'callModalDivClose'}`}>
