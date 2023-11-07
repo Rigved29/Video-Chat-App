@@ -41,6 +41,7 @@ const MyPlayer = ({ audioOn, setVideoCompRendered }) => {
         }
     }, [callAccepted])
 
+    console.log('callAccepted', callAccepted);
 
     return (
 
